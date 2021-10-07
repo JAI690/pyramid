@@ -4,13 +4,13 @@ module.exports = {
 
     database: {
     
-    host: ' ',
+    host: 'b5vtwr9nlytnzgzgwe4t-mysql.services.clever-cloud.com',
     
-    user: '' ,
+    user: 'uwkugetqmahdupxg' ,
     
-    password: '' ,
+    password: '4WIbMPBPgnwGXpdm0TSC' ,
     
-    database: ' '
+    database: 'b5vtwr9nlytnzgzgwe4t'
     
     }
     
