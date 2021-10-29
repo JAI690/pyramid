@@ -1,0 +1,37 @@
+<div class="contenedor-formulario">
+
+    <div class="wrap">
+
+            <!--Formulario-->
+            <div><h3>CONTACTANOS</h3></div>
+                <br>  
+            <div><p>Completa los datos requeridos para contactarnos </p></div>
+            
+            <form  class="formulario" name="formulario_registro" method="post">
+                <div>
+                        <div >
+                            <label for="nombre"><strong><font color="black"> Nombre:</font></strong></label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Su nombre" required>
+                        </div>
+
+                        <div >
+                                <label for="email"> <strong><font color="black"> Correo: </font></strong></label>
+                                <input type="email" id="email" name="email" placeholder="Su correo electrónico" required>   
+                        </div>
+                            
+                        <div >
+                            <label for="telefono"><strong> <font color="black">Teléfono :  </font></strong></label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Su teléfono" required>
+                        </div>
+
+                        <div >
+                            <label for="msn"> <strong><font color="black"> Mensaje:</font></strong></label>  <!-- cambiamos la posicion   -->
+                            <textarea name="msn" rows="4" cols="45" required></textarea>
+                        </div>
+                    
+                        <input  type="submit" id="btn-submit" value="ENVIAR">
+                </div>
+                <p class="message">¿Quiere volver al inicio? <a href="inicio.html">Regresar</a></p>            
+            </form>
+        </div>  
+</div>  
