@@ -18,5 +18,9 @@ res.render("../views/Home/home.hbs")
 //../views/Detalles_productos/detalles_productos.hbs
 //../views/Favoritos/favoritos.hbs
 //../views/Cuenta/cuenta.hbs
+//../views/partials/footer.hbs
+//../views/Info_envios/info_envios.hbs
+//../views/Politicas/politicas.hbs
+
 
 module.exports = router;
