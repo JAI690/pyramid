@@ -6,17 +6,32 @@ const pool = require('../database');
 router.get('/favoritos', async(req,res) => {
     const id = req.user.usuario_id;
     const favoritos = await pool.query('SELECT * FROM Productos LEFT JOIN favoritos ON Productos.productos_id = favoritos.id_producto WHERE favoritos.id_user = ? ', id);
-    console.log(favoritos);
     res.render("../views/Favoritos/favoritos.hbs", {favoritos});
 });
 
 router.post('/favoritos/:id', async(req,res) => {
     const { id } = req.params;
+    const id_user = req.user.usuario_id
+    const existentes = await pool.query('SELECT * FROM favoritos WHERE id_user = ? AND id_producto = ?;', [id_user,id]);
     const newLink = {
-        id_user:  req.user.usuario_id,
+        id_user,
         id_producto: id
     }
-    await pool.query('INSERT INTO favoritos set ?', [newLink]);
+
+    if(existentes.length > 0 ){
+        req.flash('message', 'Ya has guardado este producto');
+        res.redirect('/favoritos');
+    }else{
+        await pool.query('INSERT INTO favoritos set ?', [newLink]);
+        req.flash('success', 'Producto guardado correctamente');
+        res.redirect('/favoritos');
+    }
+})
+
+router.post('/eliminar/:id', async(req,res) => {
+    const { id } = req.params;
+    const id_user = req.user.usuario_id;
+    await pool.query('DELETE FROM favoritos WHERE id_user = ? AND id_producto = ?;', [id_user,id]);
     req.flash('success', 'Lead guardado correctamente');
     res.redirect('/favoritos');
 })
@@ -25,8 +40,6 @@ router.post('/favoritos/:id', async(req,res) => {
 router.get('/cuenta', async(req,res) => {
     const id = req.user.usuario_id;
     const usuario = await pool.query('SELECT * FROM Usuario WHERE usuario_id = ?;', id);
-    console.log(id);
-    console.log(usuario)
     res.render("../views/Cuenta/cuenta.hbs", {usuario});
 });
 
