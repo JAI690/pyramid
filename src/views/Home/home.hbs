@@ -43,7 +43,10 @@
                         <br>
                         <p class="card-text">PRECIO ORIGINAL: <strong><font color="#DB8E3F">${{precio_neto}}</font></strong></p>
                         <p class="card-text"><h3>OFERTA: <strong><font color="#DB8E3F">${{oferta_precio}}</font></strong></h3></p> <!--PRECIO-->
-                        <a href="favoritos/{{productos_id}}" class="btn btn-warning">Favoritos</a>
+                        <form action="/favoritos/{{productos_id}}" method="POST">
+                            <input type="submit" value="Favoritos" class="btn btn-warning">
+                        </form>
+                        
                     </div>
                 </div>
             </div>
