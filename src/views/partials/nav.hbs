@@ -13,32 +13,53 @@
 
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ul-auto">
 
-    <li class="nav-item">
 
-    <a class="nav-link" aria-current="page" href="/">INICIO</a>
 
-    </li>
+        {{#if user}}
 
-    <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">INICIO</a>
+            </li>
 
-    <a class="nav-link" aria-current="page" href="/productos">PIRAMICAMA</a>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/productos">PIRAMICAMA</a>
+            </li>
 
-    </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/nomina">LUXOR</a>
+            </li>
 
-    <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="/cuenta">CUENTA</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/contactanos">CONTACTANOS</a>
+            </li>
 
-    <a class="nav-link" href="/nomina">LUXOR</a>
-    </li>
-    <li class="nav-item">
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">INICIO</a>
+        </li>
 
-    <a class="nav-link" href="/contactanos">CONTACTANOS</a>
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/productos">PIRAMICAMA</a>
+        </li>
 
-    </li>
-    <li class="nav-item">
+        <li class="nav-item">
+            <a class="nav-link" href="/nomina">LUXOR</a>
+        </li>
 
-    <a class="nav-link" href="/cuenta">CUENTA</a>
-
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contactanos">CONTACTANOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signin">LOGIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">REGISTER</a>
+        </li>
+        {{/if}}
 
     </ul>
 
@@ -47,3 +68,31 @@
     </div>
 
     </nav>
+
+
+<!--
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">INICIO</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/productos">PIRAMICAMA</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/nomina">LUXOR</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/contactanos">CONTACTANOS</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/cuenta">CUENTA</a>
+        </li>
+
+         <li class="nav-item">
+            <a class="nav-link" href="/signing">LOG IN</a>
+        </li>
+
+    -->

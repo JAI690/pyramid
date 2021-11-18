@@ -20,58 +20,43 @@ res.render('./auth/signup.hbs');
 
 router.post('/signup', passport.authenticate('local.signup', {
 
-successRedirect: '/profile',
+    successRedirect: '/profile',
 
-failureRedirect: '/signup',
+    failureRedirect: '/signup',
 
-failureFlash: true
+    failureFlash: true
 
 }));
 
 
 
 router.get('/signin', isNotLoggedIn, (req,res)=>{
-
-res.render('./auth/signin.hbs');
-
+    res.render('./auth/signin.hbs');
 });
-
-
 
 
 router.post('/signin', isNotLoggedIn, (req,res,next)=>{
 
-passport.authenticate('local.signin', {
+    passport.authenticate('local.signin', {
 
-successRedirect: '/profile',
+        successRedirect: '/profile',
 
-failureRedirect: '/signin',
+        failureRedirect: '/signin',
 
-failureFlash: true
+        failureFlash: true
 
-})(req,res,next);
+        })(req,res,next);
 
 });
 
 
 router.get('/profile', isLoggedIn, (req,res) => {
-
-
-
     res.send('Hola mundo');
-    
-    
-    
     });
-    
-    
-    
-    router.get('/logout', (req,res) => {
-    
+
+router.get('/logout', (req,res) => {
     req.logOut();
-    
     res.redirect('/signin')
-    
     });
     
     

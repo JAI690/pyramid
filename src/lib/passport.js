@@ -22,13 +22,10 @@ const { fullname, rol } = req.body;
 
 const newUser = {
 
-user: username,
-
-password,
-
-nombre : fullname,
-
-rol
+user,
+nombre,
+correo,
+contraseña
 
 };
 
@@ -48,7 +45,7 @@ passport.use('local.signin', new LocalStrategy({
 
 userNameField: 'user',
 
-passwordField: 'password',
+passwordField: 'contraseña',
 
 passReqToCallback: true
 
@@ -60,7 +57,7 @@ if(rows.length > 0 ){
 
 const user = rows[0];
 
-const validPassword = await helpers.matchPassword(password,user.password);
+const validPassword = await helpers.matchPassword(password,user.contraseña);
 
 if(validPassword){
 
