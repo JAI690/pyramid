@@ -4,19 +4,20 @@
 
       <section id="info_products">
             <div class="container-fluid">
+                    {{#each producto}}
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <main id="main">
                                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-pause="false">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                        <img src="PIRAMASCOTA ESTANDAR/1.jpg" class="d-block w-100" alt="...">
+                                        <img src="/{{nombre}}/1.jpg" class="d-block w-100" alt="...">
                                         </div>
                                         <div class="carousel-item">
-                                        <img src="PIRAMASCOTA ESTANDAR/2.jpg" class="d-block w-100" alt="...">
+                                        <img src="/{{nombre}}/2.jpg" class="d-block w-100" alt="...">
                                         </div>
                                         <div class="carousel-item">
-                                        <img src="LUXOR KA/1.jpg" class="d-block w-100" alt="...">
+                                        <img src="/{{nombre}}/1.jpg" class="d-block w-100" alt="...">
                                         </div>
                                     </div>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -28,7 +29,7 @@
                                         <span class="visually-hidden">Next</span>
                                     </button>
                                 </div>
- <!--cambiar en cada uno-->        <div align="center"><img src="img/luxor_extra.jpeg" class="img-fluid" alt="..." ></div>
+ <!--cambiar en cada uno-->        <div align="center"><img src="/img/luxor_extra.jpeg" class="img-fluid" alt="..." ></div>
                                   <!--  <div align="center"><img src="img/piramicama_extra.png"  ></div> 
                                       <div align="center"><img src="img/piramicuna_extra.png"  ></div> 
                                       <div align="center"><img src="img/hercules_extra.png"  ></div> 
@@ -37,7 +38,7 @@
                     
                                
                   </div>
-                {{#each producto}}
+            
                <div class="col-12 col-lg-6">
                     <dl class="row">
                         <h1 class="display-6">{{nombre}}</h1>
@@ -115,7 +116,7 @@
     <div class="row">
             <div class="col">
                 <div class="card">
-                    <img src="LUXOR KA/principal.jpg"  class="card-img-top" alt="...">
+                    <img src="/LUXOR KA/principal.jpg"  class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">NOMBRE</h5> <!--NOMBRE-->
                         <br>
@@ -130,7 +131,7 @@
 
             <div class="col">
                 <div class="card" >
-                    <img src="LUXOR BAH/principal.jpg" class="card-img-top" alt="...">
+                    <img src="/LUXOR BAH/principal.jpg" class="card-img-top" alt="...">
                      <div class="card-body">
                         <h5 class="card-title">LUXOR BAH</h5> <!--NOMBRE-->
                         <br>
@@ -145,7 +146,7 @@
 
         <div class="col">
                 <div class="card" >
-                    <img src="LUXOR ATRIUM/principal.jpg" class="card-img-top" alt="...">
+                    <img src="/LUXOR ATRIUM/principal.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">NOMBRE</h5> <!--NOMBRE-->
                         <br>
