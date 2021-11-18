@@ -6,6 +6,7 @@ const {isLoggedIn} = require('../lib/auth');
 router.get('/favoritos',isLoggedIn, async(req,res) => {
     const id = req.user.usuario_id;
     const favoritos = await pool.query('SELECT * FROM Productos LEFT JOIN favoritos ON Productos.productos_id = favoritos.id_producto WHERE favoritos.id_user = ? ', id);
+    console.log(favoritos);
     res.render("../views/Favoritos/favoritos.hbs", {favoritos});
 });
 
