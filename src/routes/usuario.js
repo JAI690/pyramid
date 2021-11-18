@@ -1,15 +1,15 @@
 const express = require('express');
-
 const router = express.Router();
 const pool = require('../database');
+const {isLoggedIn} = require('../lib/auth');
 
-router.get('/favoritos', async(req,res) => {
+router.get('/favoritos',isLoggedIn, async(req,res) => {
     const id = req.user.usuario_id;
     const favoritos = await pool.query('SELECT * FROM Productos LEFT JOIN favoritos ON Productos.productos_id = favoritos.id_producto WHERE favoritos.id_user = ? ', id);
     res.render("../views/Favoritos/favoritos.hbs", {favoritos});
 });
 
-router.post('/favoritos/:id', async(req,res) => {
+router.post('/favoritos/:id',isLoggedIn, async(req,res) => {
     const { id } = req.params;
     const id_user = req.user.usuario_id
     const existentes = await pool.query('SELECT * FROM favoritos WHERE id_user = ? AND id_producto = ?;', [id_user,id]);
@@ -28,7 +28,7 @@ router.post('/favoritos/:id', async(req,res) => {
     }
 })
 
-router.post('/eliminar/:id', async(req,res) => {
+router.post('/eliminar/:id',isLoggedIn, async(req,res) => {
     const { id } = req.params;
     const id_user = req.user.usuario_id;
     await pool.query('DELETE FROM favoritos WHERE id_user = ? AND id_producto = ?;', [id_user,id]);
@@ -37,7 +37,7 @@ router.post('/eliminar/:id', async(req,res) => {
 })
 
 
-router.get('/cuenta', async(req,res) => {
+router.get('/cuenta',isLoggedIn, async(req,res) => {
     const id = req.user.usuario_id;
     const usuario = await pool.query('SELECT * FROM Usuario WHERE usuario_id = ?;', id);
     res.render("../views/Cuenta/cuenta.hbs", {usuario});

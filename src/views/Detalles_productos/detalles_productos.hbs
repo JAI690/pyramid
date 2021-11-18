@@ -37,15 +37,15 @@
                     
                                
                   </div>
-
+                {{#each producto}}
                <div class="col-12 col-lg-6">
                     <dl class="row">
-                        <h1 class="display-6">PIRAMICAMA HERCULES</h1>
+                        <h1 class="display-6">{{nombre}}</h1>
                         
-                        <p class="card-text">Modelo: <strong><font color="#DB8E3F">Luxor</font></strong></p>  <!--MODELO-->
-                        <p class="card-text">Tamaño: <strong><font color="#DB8E3F">King</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
+                        <p class="card-text">Modelo: <strong><font color="#DB8E3F">{{modelo}}</font></strong></p>  <!--MODELO-->
+                        <p class="card-text">Tamaño: <strong><font color="#DB8E3F">{{tamaño}}</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
                         <br>
-                                <p>DESDE:  <strong><font color="red">$30,000</font></strong> </p>
+                                <p>DESDE:  <strong><font color="red">${{precio_neto}}</font></strong> </p>
 
                     <div class="container">
                       <br>
@@ -59,36 +59,42 @@
                         <div id="descripcion" class="tab-pane fade in active">
 
                         <div class="card card-body info_products">
-                          <p>La Piramicama Hercules es una cama piramidal como la Piramicama estandar, 
-                            sin embargo sus beneficios son aun mayores e incluso el sueño es mas profundo.</p>
+                          <p>
+                            {{descripcion}}
+                        </p>
                             </div>
-                    <button type="button" class="btn btn-danger btn-lg btn-block">Añadir a Favoritos</button>
+                        <form action="/favoritos/{{productos_id}}" method="POST">
+                            <button type="submit" class="btn btn-danger btn-lg btn-block">Añadir a Favoritos</button>
+                        </form>
+                    
                         </div>
                         <div id="detalles" class="tab-pane fade">
                         <div class="card card-body info_products">
                 
                             <dt class="col-12">MATERIAL DEL COLCHON: </dt>
-                            <dd class="col-12">Colchón de espuma de alta densidad y viscoelásticas de gran grosor</dd>
+                            <dd class="col-12">{{material_colchon}}</dd>
 
                             <dt class="col-12">ESTRUCTURA PIRAMIDAL </dt>
-                            <dd class="col-12">aluminio de alta pureza.</dd>
+                            <dd class="col-12">{{estructura_piramidal}}</dd>
 
                             <dt class="col-12">BASE: </dt>
-                            <dd class="col-12" >La parte de madera (tatami),incluye un somier integrado.</dd>
+                            <dd class="col-12" >{{base}}</dd>
 
                             <dt class="col-12">COLORES: </dt>
-                            <dd class="col-12">Imprimadas y pintadas en colores a elección sin tóxicos.</dd>
+                            <dd class="col-12">{{colores}}</dd>
 
                             <dt class="col-12">BENEFICIOS </dt>
-                            <dd class="col-12">Tratamiento efectivo contra dolencias reumáticas, escleróticas, fibromialgia</dd>
+                            <dd class="col-12">{{beneficios}}</dd>
                     </div>
-                    <button type="button" class="btn btn-danger btn-lg btn-block">Añadir a Favoritos</button>
+                    <form action="/favoritos/{{productos_id}}" method="POST">
+                            <button type="submit" class="btn btn-danger btn-lg btn-block">Añadir a Favoritos</button>
+                        </form>
                      </dl>
                           </div>
                      
                       </div>
                     </div>
-                   
+                {{/each}}
            
               </div>
              </div>
@@ -97,7 +103,11 @@
       </section>  
    </section> 
 </div>
-           <div class="container p-4">
+
+
+
+
+<div class="container p-4">
              
                         
 <h1 class="display-6" align="center">PRODUCTOS SIMILARES</h1>

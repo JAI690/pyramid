@@ -18,16 +18,20 @@ router.get('/luxor', async(req,res) => {
 });
 
 router.get('/piramicama', async(req,res) => {
-    const productos = await pool.query('SELECT * FROM Productos WHERE modelo != "Luxor";');
+    const productos = await pool.query('SELECT * FROM Productos WHERE modelo != "Luxor" AND ofertas = 0;');
     res.render("../views/Productos/productos.hbs", {productos});
 });
 
-router.get('/info_productos', (req,res) => {
-    res.render("../views/Info_productos/info_productos.hbs");
+router.get('/info_productos/:id', async(req,res) => {
+    const {id} = req.params;
+    const producto = await pool.query('SELECT * FROM Productos WHERE productos_id = ?', id);
+    res.render("../views/Info_productos/info_productos.hbs", {producto});
 });
 
-router.get('/detalles_productos', (req,res) => {
-    res.render("../views/Detalles_productos/detalles_productos.hbs");
+router.get('/detalles_productos/:id', async(req,res) => {
+    const {id} = req.params;
+    const producto = await pool.query('SELECT * FROM Productos WHERE productos_id = ?', id);
+    res.render("../views/Detalles_productos/detalles_productos.hbs", {producto});
 });
 
 router.get('/politicas', (req,res) => {

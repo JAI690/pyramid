@@ -1,87 +1,76 @@
 <div class="container p4">
-   <section id="productos" class="lead">
 
-
-      <section id="info_products">
+    <section id="productos" class="lead">
+        <section id="info_products">
             <div class="container-fluid">
                 <div class="row">
+                  {{#each producto}}
                     <div class="col-12 col-lg-6">
                         <main id="main">
                                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-pause="false">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                    <img src="PIRAMASCOTA ESTANDAR/1.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                        <img src="{{nombre}}/1.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                        <img src="{{nombre}}/2.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                        <img src="{{nombre}}/1.jpg" class="d-block w-100" alt="...">
+                                        </div>
                                     </div>
-                                    <div class="carousel-item">
-                                    <img src="PIRAMASCOTA ESTANDAR/2.jpg" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                    <img src="PIRAMASCOTA ESTANDAR/1.jpg" class="d-block w-100" alt="...">
-                                    </div>
-                                </div>
+
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
                                 </button>
+
                                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
                                 
-                    <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
                                 </div>
-                                </main>
-                        </div>
+                        </main>
+                    </div>
+                    
+                    <div class="col-12 col-lg-6">
+                        <dl class="row">
+                            <h1 class="display-6">{{nombre}}</h1>
+                                <p>DESDE:  <strong><font color="red">${{precio_neto}}</font></strong> </p>
 
-               <div class="col-12 col-lg-6">
-                    <dl class="row">
-                        <h1 class="display-6">PIRAMICAMA HERCULES</h1>
-                                <p>DESDE:  <strong><font color="red">$30,000</font></strong> </p>
+                                <dt class="col-12">MODELO:</dt>
+                                <dd class="col-12">{{modelo}}</dd>
 
-                            <dt class="col-12">MODELO:</dt>
-                            <dd class="col-12">Hercules</dd>
+                                <dt class="col-12">DESCRIPCION: </dt>
+                                <dd class="col-12">{{descripcion}}</dd>
 
-                            <dt class="col-12">DESCRIPCION: </dt>
-                            <dd class="col-12">La Piramicama Hercules es una cama piramidal como la Piramicama estandar, sin embargo sus beneficios son aun mayores e incluso el sueño es mas profundo.</dd>
+                                <dt class="col-12">TAMAÑO</dt>
+                                <dd class="col-12">{{tamaño}}</dd>
 
-                            <dt class="col-12">TAMAÑO</dt>
-                            <dd class="col-12">King size</dd>
+                                <dt class="col-12">MATERIAL DEL COLCHON: </dt>
+                                <dd class="col-12">{{material_colchon}}</dd>
 
-                            <dt class="col-12">MATERIAL DEL COLCHON: </dt>
-                            <dd class="col-12">Colchón de espuma de alta densidad y viscoelásticas de gran grosor</dd>
+                                <dt class="col-12">ESTRUCTURA PIRAMIDAL </dt>
+                                <dd class="col-12">{{estructura_piramidal}}</dd>
 
-                            <dt class="col-12">ESTRUCTURA PIRAMIDAL </dt>
-                            <dd class="col-12">aluminio de alta pureza.</dd>
+                                <dt class="col-12">BASE: </dt>
+                                <dd class="col-12" >{{base}}</dd>
 
-                            <dt class="col-12">BASE: </dt>
-                            <dd class="col-12" >La parte de madera (tatami),incluye un somier integrado.</dd>
+                                <dt class="col-12">COLORES: </dt>
+                                <dd class="col-12">{{colores}}</dd>
 
-                            <dt class="col-12">COLORES: </dt>
-                            <dd class="col-12">Imprimadas y pintadas en colores a elección sin tóxicos.</dd>
+                                <dt class="col-12">BENEFICIOS </dt>
+                                <dd class="col-12">{{beneficios}}</dd>
+                        </dl>
+                    </div>
+                    {{/each}} 
+                </div>
+            </div>
+        </section>  
+    </section> 
 
-                            <dt class="col-12">BENEFICIOS </dt>
-                            <dd class="col-12">Tratamiento efectivo contra dolencias reumáticas, escleróticas, fibromialgia e infecciosas incluyendo septicemia grave. Efecto antiedad por su alto poder antioxidante. Profunda relajación muscular (cuatro veces más potente que la Piramicama Estándar). También la usan personas sanas y en especial bomberos, policías y deportistas de élite.</dd>
-                    </dl>
-              </div>
-             </div>
-         </div>
-                 
-       </div>
-      </section>  
-   </section> 
-  </div>
-            <h3>  
-            nombre
-            modelo
-            precio neto
-            descripcion	
-            Tamaño            
-            material colchon
-            Estructura piramidal	
-            Base 	
-            Colores	
-            oferta
-            oferta_precio	
-            Beneficios
-            </h3>		
+</div>
+	
              												
