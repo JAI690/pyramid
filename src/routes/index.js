@@ -1,10 +1,7 @@
 const express = require('express');
-
+const pool = require('../database');
 const router = express.Router();
 
-router.get('/', (req,res) => {
-    res.render("../views/Home/home.hbs");
-});
 
 router.get('/', (req,res) => {
     res.render("../views/Home/home.hbs");
@@ -14,16 +11,13 @@ router.get('/contactanos', (req,res) => {
     res.render("../views/Contactanos/contactanos.hbs");
 });
 
-router.get('/productos', (req,res) => {
-    res.render("../views/Productos/productos.hbs");
+router.get('/productos', async(req,res) => {
+    const productos = await pool.query('SELECT * FROM Productos;');
+    res.render("../views/Productos/productos.hbs", {productos});
 });
 
 router.get('/info_productos', (req,res) => {
     res.render("../views/Info_productos/info_productos.hbs");
-});
-
-router.get('/detalles_productos', (req,res) => {
-    res.render("../views/Detalles_productos/detalles_productos.hbs");
 });
 
 router.get('/detalles_productos', (req,res) => {
@@ -40,6 +34,10 @@ router.get('/devoluciones', (req,res) => {
 
 router.get('/terminos', (req,res) => {
     res.render("../views/TERMINOS_CONDICIONES/terminos_condiciones.hbs");
+});
+
+router.get('/info', (req,res) => {
+    res.render("../views/Info_envios/info_envios.hbs");
 });
 
 //../views/Contactanos/contactanos.hbs //le falta pop-ups
