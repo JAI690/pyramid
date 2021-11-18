@@ -11,8 +11,13 @@ router.get('/contactanos', (req,res) => {
     res.render("../views/Contactanos/contactanos.hbs");
 });
 
-router.get('/productos', async(req,res) => {
-    const productos = await pool.query('SELECT * FROM Productos;');
+router.get('/luxor', async(req,res) => {
+    const productos = await pool.query('SELECT * FROM Productos WHERE modelo = "Luxor";');
+    res.render("../views/Productos/productos.hbs", {productos});
+});
+
+router.get('/piramicama', async(req,res) => {
+    const productos = await pool.query('SELECT * FROM Productos WHERE modelo != "Luxor";');
     res.render("../views/Productos/productos.hbs", {productos});
 });
 
