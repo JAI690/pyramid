@@ -31,50 +31,23 @@
 <h1 class="display-6" align="center">¡OFERTAS!</h1>
 <br>
     <div class="row">
+        {{#each ofertas}}
             <div class="col">
                 <div class="card">
-                    <img src="LUXOR KA/principal.jpg"  class="card-img-top" alt="...">
+                    <img src="{{nombre}}/principal.jpg"  class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">NOMBRE</h5> <!--NOMBRE-->
+                        <h5 class="card-title">{{nombre}}</h5> <!--NOMBRE-->
                         <br>
-                        <p class="card-text">Modelo: <strong><font color="#DB8E3F">Luxor</font></strong></p>  <!--MODELO-->
-                        <p class="card-text">Tamaño: <strong><font color="#DB8E3F">King Size</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
+                        <p class="card-text">Modelo: <strong><font color="#DB8E3F">{{modelo}}</font></strong></p>  <!--MODELO-->
+                        <p class="card-text">Tamaño: <strong><font color="#DB8E3F">{{tamaño}}</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
                         <br>
-                        <p class="card-text">DESDE <strong><font color="#DB8E3F">$30,000</font></strong></p> <!--PRECIO-->
-                        <a href="#" class="btn btn-warning">Favoritos</a>
+                        <p class="card-text">PRECIO ORIGINAL: <strong><font color="#DB8E3F">${{precio_neto}}</font></strong></p>
+                        <p class="card-text"><h3>OFERTA: <strong><font color="#DB8E3F">${{oferta_precio}}</font></strong></h3></p> <!--PRECIO-->
+                        <a href="favoritos/{{productos_id}}" class="btn btn-warning">Favoritos</a>
                     </div>
                 </div>
-                </div>
-
-            <div class="col">
-                <div class="card" >
-                    <img src="LUXOR BAH/principal.jpg" class="card-img-top" alt="...">
-                     <div class="card-body">
-                        <h5 class="card-title">LUXOR BAH</h5> <!--NOMBRE-->
-                        <br>
-                        <p class="card-text">Modelo: <strong><font color="#DB8E3F">Luxor</font></strong></p>  <!--MODELO-->
-                        <p class="card-text">Tamaño: <strong><font color="#DB8E3F">King Size</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
-                        <br>
-                        <p class="card-text">DESDE <strong><font color="#DB8E3F">$30,000</font></strong></p> <!--PRECIO-->
-                        <a href="#" class="btn btn-warning">Favoritos</a>
-                    </div>
-                </div>
-         </div>
-
-        <div class="col">
-                <div class="card" >
-                    <img src="LUXOR ATRIUM/principal.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">NOMBRE</h5> <!--NOMBRE-->
-                        <br>
-                        <p class="card-text">Modelo: <strong><font color="#DB8E3F">Luxor</font></strong></p>  <!--MODELO-->
-                        <p class="card-text">Tamaño: <strong><font color="#DB8E3F">King</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
-                        <br>
-                        <p class="card-text">DESDE <strong><font color="#DB8E3F">$30,000</font></strong></p> <!--PRECIO-->
-                        <a href="#" class="btn btn-warning">Favoritos</a>
-                    </div>
-                </div>
-         </div>
+            </div>
+        {{/each}}
 
     </div>
 </div>
