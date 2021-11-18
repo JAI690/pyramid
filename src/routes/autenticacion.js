@@ -20,7 +20,7 @@ res.render('./auth/signup.hbs');
 
 router.post('/signup', passport.authenticate('local.signup', {
 
-    successRedirect: '/profile',
+    successRedirect: '/',
 
     failureRedirect: '/signup',
 
@@ -39,7 +39,7 @@ router.post('/signin', isNotLoggedIn, (req,res,next)=>{
 
     passport.authenticate('local.signin', {
 
-        successRedirect: '/profile',
+        successRedirect: '/',
 
         failureRedirect: '/signin',
 
