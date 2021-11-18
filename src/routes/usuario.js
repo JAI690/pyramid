@@ -3,8 +3,11 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../database');
 
-router.get('/favoritos', (req,res) => {
-    res.render("../views/Favoritos/favoritos.hbs");
+router.get('/favoritos', async(req,res) => {
+    const id = req.user.usuario_id;
+    const favoritos = await pool.query('SELECT * FROM Productos LEFT JOIN favoritos ON Productos.productos_id = favoritos.id_producto WHERE favoritos.id_user = ? ', id);
+    console.log(favoritos);
+    res.render("../views/Favoritos/favoritos.hbs", {favoritos});
 });
 
 router.post('/favoritos/:id', async(req,res) => {
