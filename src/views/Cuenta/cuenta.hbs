@@ -4,25 +4,26 @@
               <dl class="row">
                 <h1 class="display-6" align="center">CUENTA</h1>
                 <div><h4>Datos de la cuenta</h4></div>
-
-                <dt class="col-sm-3"> Nombre:</dt>
-                <dd class="col-sm-9"> nombre del usuario</dd>
+              {{#each usuario}}
+                <dt class="col-sm-3"> Nombre: </dt>
+                <dd class="col-sm-9"> {{nombre}}</dd>
 
                 <dt class="col-sm-3">Correo:</dt>
-                <dd class="col-sm-9">correo electronico del usuario</dd>
+                <dd class="col-sm-9">{{correo}}</dd>
 
                 <dt class="col-sm-3">Teléfono:</dt>
-                <dd class="col-sm-9">Telefono del usuario </dd>
+                <dd class="col-sm-9">{{telefono}}</dd>
+              {{/each}}
               </dl>
 <div class="col">
 <dl class="row">
-<button type="button" class="btn btn-danger btn-lg btn-block">Favoritos</button>
+<button type="button" onclick="window.location.href='/favoritos'" class="btn btn-danger btn-lg btn-block">Favoritos</button>
 </dl>
 </div>
 
 <div class="col-4">
 <dl class="row">
-<button type="button" class="btn btn-warning">SALIR</button>
+<button type="button" onclick="window.location.href='/logout'" class="btn btn-warning">SALIR</button>
 </dl>
 </div>
           </div>  

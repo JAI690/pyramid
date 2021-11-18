@@ -19,8 +19,12 @@ router.post('/favoritos/:id', async(req,res) => {
 })
 
 
-router.get('/cuenta', (req,res) => {
-    res.render("../views/Cuenta/cuenta.hbs");
+router.get('/cuenta', async(req,res) => {
+    const id = req.user.usuario_id;
+    const usuario = await pool.query('SELECT * FROM Usuario WHERE usuario_id = ?;', id);
+    console.log(id);
+    console.log(usuario)
+    res.render("../views/Cuenta/cuenta.hbs", {usuario});
 });
 
 
