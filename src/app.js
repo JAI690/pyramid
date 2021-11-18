@@ -101,7 +101,7 @@ app.use(require('./routes'));
 
 app.use(require('./routes/autenticacion'));
 
-
+app.use(require('./routes/usuario'));
 
 
 
