@@ -4,14 +4,14 @@
                                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-pause="false">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                        <img src="img/1.png" class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
                                         <img src="img/2.png" class="d-block w-100" alt="...">
                                         </div>
+                                    {{#each productos}}
                                         <div class="carousel-item">
-                                        <img src="img/3.png" class="d-block w-100" alt="...">
+                                        <a href="/detalles_productos/{{productos_id}}"><img src="/{{nombre}}/principal.jpg" class="d-block w-100" alt="..."></a>
                                         </div>
+                                    {{/each}}
+                                        
                                     </div>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -36,7 +36,7 @@
                 <div class="card">
                     <img src="/{{nombre}}/principal.jpg"  class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{nombre}}</h5> <!--NOMBRE-->
+                        <a href="/detalles_productos/{{productos_id}}"><h5 class="card-title">{{nombre}}</h5></a> <!--NOMBRE-->
                         <br>
                         <p class="card-text">Modelo: <strong><font color="#DB8E3F">{{modelo}}</font></strong></p>  <!--MODELO-->
                         <p class="card-text">Tamaño: <strong><font color="#DB8E3F">{{tamaño}}</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->

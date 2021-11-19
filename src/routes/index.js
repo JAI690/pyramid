@@ -4,8 +4,9 @@ const router = express.Router();
 
 
 router.get('/', async(req,res) => {
+    const productos = await pool.query('SELECT * FROM Productos');
     const ofertas = await pool.query('SELECT * FROM Productos WHERE ofertas = 1;');
-    res.render("../views/Home/home.hbs", {ofertas});
+    res.render("../views/Home/home.hbs", {productos,ofertas});
 });
 
 router.get('/contactanos', (req,res) => {
