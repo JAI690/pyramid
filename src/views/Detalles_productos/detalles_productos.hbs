@@ -46,7 +46,12 @@
                         <p class="card-text">Modelo: <strong><font color="#DB8E3F">{{modelo}}</font></strong></p>  <!--MODELO-->
                         <p class="card-text">Tamaño: <strong><font color="#DB8E3F">{{tamaño}}</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
                         <br>
-                                <p>DESDE:  <strong><font color="red">${{precio_neto}}</font></strong> </p>
+                        {{#if (status ofertas)}}
+                        <p class="card-text">DESDE <strong><font color="#DB8E3F">${{oferta_precio}}</font></strong></p> <!--PRECIO-->
+                        {{else}}
+                        <p class="card-text">DESDE <strong><font color="#DB8E3F">${{precio_neto}}</font></strong></p>
+                        {{/if}}
+
 
                     <div class="container">
                       <br>

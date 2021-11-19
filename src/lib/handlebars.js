@@ -7,16 +7,11 @@ const moment = require("moment");
 
 
 hb.registerHelper('status', function (value) {
-
-if(value === '1'){
-
-return true;
-
-}else{
-
-return false;
-
-}
+    if(value == '1'){
+        return true;
+    }else{
+        return false;
+    }
 
 });
 

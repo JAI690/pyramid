@@ -13,7 +13,10 @@
                         <p class="card-text">Modelo: <strong><font color="#DB8E3F">{{modelo}}</font></strong></p>  <!--MODELO-->
                         <p class="card-text">Tamaño: <strong><font color="#DB8E3F">{{tamaño}}</font></strong></p>  <!--TAMAÑO PERO EN BASE DICE MEDIDAS-->
                         <br>
-                        <p class="card-text">DESDE <strong><font color="#DB8E3F">${{precio_neto}}</font></strong></p> <!--PRECIO-->
+
+
+                        <p class="card-text">DESDE <strong><font color="#DB8E3F">${{precio_neto}}</font></strong></p>
+
                         <form action="/favoritos/{{productos_id}}" method="POST">
                             <input type="submit" value="Favoritos" class="btn btn-warning">
                         </form>
